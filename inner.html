@@ -4,14 +4,16 @@
     <meta charset="utf8"/>
   </head>
   <body>
-    iframe
+    <p>inner.html</p>
     <script>
-     let worker = new SharedWorker("sharedWorker.js");
-
-     (async () => {
-       console.log("hello from inner.html");
-       let registration = await navigator.serviceWorker.register('serviceWorker.js');
-     })();
+     if (parent.location.host === "arthuredelstein.github.io") {
+       (async () => {
+         console.log("hello from inner.html");
+         let registration = await navigator.serviceWorker.register('serviceWorker.js');
+       })();
+     } else {
+       let worker = new SharedWorker("sharedWorker.js");
+     }
     </script>
   </body>
 </html>
