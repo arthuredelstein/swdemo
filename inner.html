@@ -4,8 +4,10 @@
     <meta charset="utf8"/>
   </head>
   <body>
+    iframe
     <script>
      (async () => {
+       console.log("hello");
        let registration = await navigator.serviceWorker.register('serviceWorker.js');
      })();
     </script>
