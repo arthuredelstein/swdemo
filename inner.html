@@ -6,6 +6,8 @@
   <body>
     iframe
     <script>
+     let worker = new SharedWorker("sharedWorker.js");
+
      (async () => {
        console.log("hello");
        let registration = await navigator.serviceWorker.register('serviceWorker.js');
