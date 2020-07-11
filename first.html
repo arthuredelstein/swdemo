@@ -7,8 +7,10 @@
   <body>
     <h1>ServiceWorker demo</h1>
     <script>
-     console.log("hello from index.html");
+     (async () => {
+       console.log("hello from first.html");
+       let registration = await navigator.serviceWorker.register('serviceWorker.js');
+     })();
     </script>
-    <iframe src="https://arthuredelstein.github.io/swdemo/inner1.html"></iframe>
   </body>
 </html>
