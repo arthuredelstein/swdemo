@@ -6,7 +6,14 @@
   <body>
     <p>inner.html</p>
     <script>
-     if (parent.location.host === "arthuredelstein.github.io") {
+     let sameOrigin;
+     try {
+       parent.document;
+       sameOrigin = true;
+     } catch (e) {
+       sameOrigin = false;
+     }
+     if (sameOrigin) {
        (async () => {
          console.log("hello from inner.html");
          let registration = await navigator.serviceWorker.register('serviceWorker.js');
