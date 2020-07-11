@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8"/>
+  </head>
+  <body>
+    <p>inner.html</p>
+    <script>
+     (async () => {
+       console.log("hello from inner1.html");
+       let registration = await navigator.serviceWorker.register('serviceWorker.js');
+     })();
+    </script>
+  </body>
+</html>
