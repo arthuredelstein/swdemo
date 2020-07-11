@@ -9,7 +9,7 @@
      let worker = new SharedWorker("sharedWorker.js");
 
      (async () => {
-       console.log("hello");
+       console.log("hello from inner.html");
        let registration = await navigator.serviceWorker.register('serviceWorker.js');
      })();
     </script>
